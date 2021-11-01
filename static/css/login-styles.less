@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.displayNone {
+  display: none;
+}
+
+@media all {
+
+  .wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    background: url(../img/bg.jpg);
+    background-size: 100%;
+  }
+
+  .container {
+    //height: 100%;
+    //min-height: 680px;
+    //display: flex;
+    //flex-direction: column;
+  }
+
+  .sign-bar {
+    margin-top: 72px;
+    border-radius: 24px 24px 0 0;
+    background-color: #F9FAFF;
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: calc(100vh - 72px);
+      margin: 0 32px;
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px 40px;
+    }
+
+    &__input {
+      border: 1px solid #DCE0EC;
+      box-sizing: border-box;
+      box-shadow: 0px 4px 32px rgb(218 228 255 / 16%);
+      border-radius: 8px;
+      font-size: 15px;
+      line-height: 138%;
+      width: 100%;
+      padding: 9px 47px;
+
+      &:focus {
+        border-color: #7297FF;
+        filter: drop-shadow(0px 4px 32px rgba(218, 228, 255 / 16%));
+      }
+    }
+
+    &__have-account {
+      font-size: 15px;
+      line-height: 140%;
+      margin-top: auto;
+      margin-bottom: 83px;
+      color: #A1ABC9;
+    }
+
+    &__have-account_link {
+      display: block;
+      margin-left: 0;
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 130%;
+      margin-top: 5px;
+      align-items: center;
+      text-decoration-line: underline;
+      color: #7297FF;
+    }
+
+    &_back-link {
+      text-decoration-line: none;
+      margin-right: 24px;
+    }
+  }
+
+  .sign-form {
+
+    &__input {
+
+      &_name-icon {
+        background: url("../img/user-icon.svg") no-repeat;
+      }
+
+      &_email-icon {
+        background: url("../img/email-icon.svg") no-repeat;
+      }
+
+      &_password-icon {
+        background: url("../img/lock-icon.svg") no-repeat;
+        width: 100%;
+      }
+
+      &_confirm-password-icon {
+        background: url("../img/check-icon.svg") no-repeat;
+        width: 100%;
+      }
+
+      &_icon-position {
+        background-position-y: center;
+        background-position-x: 18px;
+      }
+    }
+
+    &__name {
+      color: #202225;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 120%;
+      margin: 32px 0 4px 0px;
+    }
+
+    &__validation {
+      font-size: 13px;
+      line-height: 120%;
+      letter-spacing: -0.24px;
+      color: #F6657F;
+      margin-top: 14px;
+
+      &_error {
+        //color: #F6657F;
+        border-color: #F6657F;
+      }
+    }
+  }
+
+  .password-block {
+    position: relative;
+
+    &__eye-button {
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      background: url("../img/eye-slash-icon.svg") no-repeat center;
+      right: 7.2%;
+      width: 20px;
+      height: 100%;
+    }
+  }
+
+  .sign-button {
+    font-weight: 600;
+    color: #FFFFFF;
+    padding: 14.5px;
+
+    &_style {
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 130%;
+      margin: 9px auto 0 0;
+      color: white;
+      background: url("../img/angle-right-b-icon.svg") no-repeat center right 22.29px #7297FF;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 48px 13px 16px;
+    }
+  }
+
+}
+
+@media only screen and (min-width: 600px){
+  .wrapper {
+
+    display: flex;
+    flex-direction: row-reverse;
+    background: url(../img/bg.jpg);
+    background-size: cover;
+    height: 100vh;
+    min-height: 700px;
+  }
+
+  .sign-bar {
+    background: #F9FAFF;
+    margin-top: 0;
+    font-size: 17px;
+    border-radius: unset;
+
+    &__container {
+      margin: 0 96px;
+      height: 100vh;
+    }
+
+    &__form {
+      justify-content: center;
+      gap: 39px 40px;
+    }
+
+    &__input {
+      font-size: 17px;
+      padding: 16px 63px;
+    }
+
+    &__have-account {
+      bottom: 42px;
+
+      &_link {
+        display: initial;
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .sign-form {
+
+    &__name {
+      font-size: 24px;
+      line-height: 110%;
+      font-weight: 600;
+      margin: 98px 0 4px 0px;
+    }
+
+    &__input_icon-position {
+      background-position-y: center;
+      background-position-x: 25px;
+    }
+  }
+
+
+  .sign-button {
+
+    &_style {
+      font-size: 17px;
+      margin-top: 24px;
+      padding: 17px 57px 17px 24px;
+      background: url("../img/angle-right-b-icon.svg") no-repeat center right 31.29px #7297FF;
+    }
+  }
+
+}
+
+
+@media (orientation: landscape){
+  .wrapper {
+    height: 100vw;
+  }
+
+}
+
+@media only screen and (min-width: 1023px) {
+  .sign-form {
+
+    &__name {
+      margin: 36px 0 4px 0px;
+    }
+  }
+
+  .sign-bar {
+    width: 560px;
+    &__have-account {
+      margin-bottom: 47px;
+    }
+  }
+}
+
+@media (max-height: 1080px )
+{body {
+  height: 100vh;}}

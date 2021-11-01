@@ -14,6 +14,7 @@ export default class Controller {
         this.view.bindClickLink2(this.handleClickLink2)
         this.model.bindClickLink(this.onClickLink)
         // this.view.alertMessage(this.onClickLink1)
+
     }
 
     onClickLink = (content) =>{

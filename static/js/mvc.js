@@ -1,9 +1,11 @@
 import Controller from "./controller.js"
 import View from "./view.js"
 import Model from "./model.js"
-// import {showPassword} from "./show-password.js";
-
+import {validation} from "./utils/validation.js";
+import regex from "./utils/regex.js";
+console.log('mvc loaded')
 const app = new Controller(new Model(), new View())
+
 
 
 //----router
@@ -15,14 +17,10 @@ const navigateTo = url => {
 
 const router = async () => {
     const routes = [
-        // {path: "/", view: Main},
         {path: "/", view: () => {
-                console.log("main")
+                // console.log("main")
                 app.handleClickLink2('signUpPage')
             }},
-        // {path: "/", view: app.view.currentPage = 'ddd'},
-        // {path: "/sign-in", view: () => user.sayHi()},
-        // {path: "/sign-in", view: () => app.onClickLink1('you at /sign-in')},
         {path: "/sign-in", view: () => app.handleClickLink2('signInPage')},
         {path: "/sign-up", view: () => app.handleClickLink2('signUpPage')},
         {path: "/restore-password", view: () => app.handleClickLink2("restorePasswordPage")},
@@ -46,15 +44,27 @@ const router = async () => {
     // console.log(match)
     // console.log(match.route)
     console.log(match.route.view())
-//
-//     const bodyHtml = `
-//             <h1> Main Page </h1>
-//             <a class="" href="/sign-up" data-link >Sign Up222</a>
-//         `
-//     const view = new match.route.view('Title', bodyHtml, '../../templates/footer-tmpl.html')
-//
-//     // document.querySelector("#app").innerHTML = await view.getHtml()
+
+
+        const firstNameInput = document.querySelector('#firstName')
+        const lastNameInput = document.querySelector('#lastName')
+        const emailInput = document.querySelector('#email')
+        const passwordInput = document.querySelector('#password')
+        const confirmPasswordInput = document.querySelector('#confirm_password')
+    // debugger
+        validation(firstNameInput, regex.name)
+        validation(lastNameInput, regex.name)
+        validation(emailInput, regex.email)
+        validation(passwordInput, regex.password)
+        validation(confirmPasswordInput, regex.password)
+
+    document.addEventListener('submit', event =>{
+        event.preventDefault()
+        console.log('bindAddTodo')
+    })
 }
+
+
 window.addEventListener("popstate", router)
 //
 document.addEventListener("DOMContentLoaded", () => {
@@ -65,4 +75,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
     router()
+})
+
+document.body.addEventListener('blur',()=>{
+    console.log('blur')
 })

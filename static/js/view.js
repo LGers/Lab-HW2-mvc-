@@ -1,17 +1,9 @@
-// import {signUpPage} from "../templates/sign-up.js";
-// import {signInPage} from "../templates/sign-in.js";
-// import {restorePasswordPage} from "../templates/restore-password.js";
-// import {restorePasswordSentPage} from "../templates/restore-password-sent.js";
 export default class View {
     constructor() {
         this.app = this.getElement('#root')
-
-        // this.title = this.createElement('h1')
-        // this.title.textContent = 'HW1-SPA'
         this.currentPage = this.createElement('div')
-
         this.app.append(this.currentPage)
-        // this.app.append(this.title, this.currentPage)
+
     }
 
     createElement(tag, className) {
@@ -44,27 +36,6 @@ export default class View {
         }
     }
 
-    /*bindClickLink(handler) {
-        this.currentPage.addEventListener('click', event => {
-            switch (event.target.textContent) {
-                case 'Sign in': {
-                    handler(signInPage)
-                    break
-                }
-                case 'Sign Up': {
-                    handler(signUpPage)
-                    break
-                }
-                case 'Forgot Password?': {
-                    handler(restorePasswordPage)
-                    break
-                }
-                case 'Send Reset Link': handler(restorePasswordSentPage);
-            }
-
-        })
-    }*/
-
     bindClickLink2(handler) {
         this.currentPage.addEventListener('click', event => {
             switch (event.target.textContent) {
@@ -84,6 +55,5 @@ export default class View {
             }
         })
     }
-
 }
 
